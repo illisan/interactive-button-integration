@@ -7,13 +7,13 @@ For this app the key compontents are:
 3. Interactive Buttons
 
 First, you'll need a request URL that slack can use to post to. Remember, that all request URLs must point to a TLS-enabled HTTPS URL located on a publicly accessible server with a valid SSL certificate.
-If you don't have an SSL certificate yet but want to test your app, Slack recommends that you use an HTTP proxy tool such as ngrok. This allows you to set up a secure tunnel on your localhost. I used ngrok for this particualr integration. You can find the downloading instructions [here] (https://ngrok.com/download). 
+If you don't have an SSL certificate yet but want to test your app, Slack recommends that you use an HTTP proxy tool such as ngrok. This allows you to set up a secure tunnel on your localhost. I used ngrok for this particualr integration. You can find the downloading instructions [here](https://ngrok.com/download). 
 
 To process HTTP requests you'll need to set up a a web server, I did this using express. 
-https://api.slack.com/tutorials/tunneling-with-ngrok
+
 
 1. Once you've set up your server make sure you create a slack app if you don't already have one. 
-2. The app will provide you with a client id and client secret these are important for slack oAuth process. Keep this information safe! I created envoirment variables that store that information for me. I found [this tutorial helpful] (https://codeburst.io/how-to-easily-set-up-node-environment-variables-in-your-js-application-d06740f9b9bd) for that.
+2. The app will provide you with a client id and client secret these are important for slack oAuth process. Keep this information safe! I created envoirment variables that store that information for me. I found [this tutorial helpful](https://codeburst.io/how-to-easily-set-up-node-environment-variables-in-your-js-application-d06740f9b9bd) for that.
 3. Create a new slash command and activate interactive messaging.
 4. Provide it with a request url from your ngrok server. 
 5. Assign your response url to a varible you can use throughout the app. 
