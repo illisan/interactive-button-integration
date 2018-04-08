@@ -22,14 +22,14 @@ To process HTTP requests you'll need to set up a a web server, I did this using 
 8. Slack offer thorough documentation on the capabilities of messages and message attachments. When using interactive features make sure to include the "actions" key this will track the user's behaviour and allow you to respond to it. 
 9. This interactive meassage features a joke of the day, when the button is clicked, the "confirm" key is triggered and a pop-up window appears with the answer to the joke. Clicking the "no" button triggers a follow-up response from the /slack/actions endpoint. 
 
-Slash Command
+## Slash Command
 
 ![Alt text](/imgs/sample1.png?raw=true)
 
-Message Attachments & Button
+## Message Attachments & Button
 
 ![Alt text](/imgs/sample2.png?raw=true)
 
-Confirm Window
+## Confirm Window
 
 ![Alt text](/imgs/sample3.png?raw=true)

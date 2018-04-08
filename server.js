@@ -59,6 +59,37 @@ sendMessageToSlackResponseURL = (responseURL, JSONmessage) => {
 
 app.post('/command', urlencodedParser, (req, res) => {
     res.status(200).end() // best practice to respond with empty 200 status code
+    let jokeJSON = {
+        "randomJoke": [
+            {
+                "title": "What do you call it when Batman skips Church? :church:",
+                "answer": "Christian Bale.", 
+            },
+            { 
+                "title": "What's Batman's Favorite Part Of A Joke? :laughing:", 
+                "answer": "The PUNCH line!" 
+            },
+            { 
+                "title": "What's Batman's Favorite Fruit? :apple:", 
+                "answer": "Ba na na na na na na na grapefruit." 
+            },
+            { 
+                "title": "What Happened When Batman & Robin Were Run Over By A Steam Roller? :tractor:", 
+                "answer": "They became Flatman and Ribbon." 
+            },
+            { 
+                "title": "Where Do Batman's Goldfish Live? :fish:", 
+                "answer": "In the Bat Tub!" 
+            },
+            { 
+                "title": "Why Did Bruce's Date Go Badly? :broken_heart:", 
+                "answer": "He had BAT breath!" 
+            }
+        ]
+    }
+    let jokePicker = jokeJSON.randomJoke[Math.floor(Math.random() * jokeJSON.randomJoke.length)];
+    console.log(jokePicker)
+    console.log()
     let body = req.body
     //console.log(req.body)
     let responseURL = body.response_url
@@ -71,7 +102,7 @@ app.post('/command', urlencodedParser, (req, res) => {
                 {
                     "title": "Bat Joke of the Day",
                     "image_url": "https://media.giphy.com/media/u1r17BYXVodfW/giphy.gif",
-                    "text": "What do you call it when Batman skips Church?",
+                    "text": jokePicker.title,
                     "fallback": "Shame... buttons aren't supported in this land",
                     "callback_id": "button_tutorial",
                     "color": "#3AA3E3",
@@ -82,10 +113,10 @@ app.post('/command', urlencodedParser, (req, res) => {
                             "text": "See Answer!",
                             "type": "button",
                             "value": "yes",
-                            "style":"primary",
+                            "style": "primary",
                             "confirm": {
-                                "title": "Christian Bale!",
-                                "text":"Did you have a laugh?",
+                                "title": jokePicker.answer,
+                                "text": "Did you have a laugh?",
                                 "dismiss_text": "Yes",
                                 "ok_text": "No"
                             }
