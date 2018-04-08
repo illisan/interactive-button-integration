@@ -1,0 +1,18 @@
+{
+  "name": "ngrok",
+  "version": "1.0.0",
+  "description": "For this we'll need a another request URL. Remember, that all request URLs must point to a TLS-enabled HTTPS URL located on a publicly accessible server with a valid SSL certificate. If you don't have an SSL certificate yet but want to test your app Slack recommends that you use an HTTP proxy tool such as ngrok. This allows you to set up a secure tunnel on your localhost. I used ngrok for this particualr integration. You can find the downloading instructions here.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "request": "^2.85.0"
+  }
+}
